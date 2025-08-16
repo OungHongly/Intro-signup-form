@@ -255,3 +255,38 @@ small {
 .invalid-border {
   border: 1px solid var(--primary-red);
 }
+
+/* ==== Responesive ==== */
+@media (max-width: 875px) {
+  .heading {
+    font-size: var(--text-h3);
+  }
+  .message {
+    font-size: 12px;
+  }
+  .form-control .input-field {
+    padding: var(--space-md) var(--space-md);
+  }
+}
+@media (max-width: 760px) {
+  .grid-container {
+    gap: var(--space-md);
+  }
+}
+@media (max-width: 620px) {
+  html {
+    font-size: 56.25%;
+  }
+  .signup {
+    height: auto;
+  }
+  .grid-item1 {
+    text-align: center;
+  }
+  .grid-container {
+    margin: var(--space-xl) 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--space-lg);
+  }
+}
