@@ -1,6 +1,6 @@
 :root {
   /* FONT SIZE : Scale= 16 x1.25 */
-  --text-sm: 1.4rem; /* 1.28rem*/
+  --text-sm: 1rem; /* 1.28rem*/
   --text-link: 1.5rem; /* 1.4rem */
   --text-paragraph: 1.6rem; /* 1.6rem */
   --text-h6: 2.3rem;
@@ -43,10 +43,12 @@
   /* Use website: maketintsandshades.com */
   --primary-red: hsl(0, 100%, 74%);
   --primary-green: hsl(154, 59%, 51%);
+  --primary-dark-green: hsl(155, 63%, 41%);
 
   --blue: hsl(248, 32%, 49%);
   --dark-blue: hsl(249, 10%, 26%);
   --Grayish-blue: hsl(246, 25%, 77%);
+  --white: #fff;
 }
 * {
   box-sizing: border-box;
@@ -65,7 +67,7 @@ body {
   font-family: var(--ff-body);
   font-weight: var(--fw-normal);
   line-height: var(--line-height-normal);
-  color: var(--primary-base);
+  color: var(--white);
 }
 
 h1,
@@ -112,7 +114,6 @@ p {
 
 a {
   text-decoration: none;
-  font-size: var(--text-link);
   display: inline-block;
 }
 
@@ -133,4 +134,124 @@ small {
   /* width 90% so when browser shrink below 1200px the width of the container will be 90% of the web page and make space each side */
   width: 90%;
   margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+/* ===== Styling layout ====== */
+.signup {
+  height: 100vh;
+  background-color: var(--primary-red);
+  background-image: url("../images/bg-intro-desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  gap: var(--space-xl);
+}
+.heading {
+  margin-bottom: var(--space-md);
+}
+.signup-message {
+  background-color: var(--blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: var(--space-md);
+  border-radius: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+.message span {
+  font-weight: var(--fw-medium);
+}
+.signup-form {
+  background-color: var(--white);
+  padding: var(--space-lg);
+  border-radius: var(--space-sm);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.form-control {
+  width: 100%;
+  position: relative;
+}
+.form-control .input-field {
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--space-sm);
+
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.input-field::placeholder {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-500);
+}
+.input-field:focus {
+  border: 1px solid var(--blue);
+  outline: none;
+}
+.error-icon {
+  position: absolute;
+  right: var(--space-md);
+  top: 40%;
+  transform: translateY(-70%);
+}
+.error-message {
+  color: var(--primary-red);
+  display: block;
+  font-style: italic;
+  text-align: end;
+  margin-top: var(--space-xs);
+  font-weight: var(--fw-500);
+}
+.btn-freeTrial {
+  text-transform: uppercase;
+  padding: var(--space-md);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: var(--ff-body);
+  color: var(--white);
+  background-color: var(--primary-green);
+  font-weight: var(--fw-500);
+  letter-spacing: 1px;
+  border-radius: var(--space-xs);
+
+  border: none;
+  box-shadow: 1px 2px 1px 2px var(--primary-dark-green);
+  cursor: pointer;
+  transition: 0.15s;
+}
+.btn-freeTrial:hover {
+  opacity: 0.8;
+}
+.service-terms {
+  color: var(--Grayish-blue);
+  font-size: 10px;
+  text-align: center;
+}
+.service-terms a {
+  color: var(--primary-red);
+  font-weight: var(--fw-medium);
+}
+
+/* === State class === */
+.hidden {
+  display: none;
+}
+.invisible {
+  visibility: hidden;
+}
+.invalid-border {
+  border: 1px solid var(--primary-red);
 }
