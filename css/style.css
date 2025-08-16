@@ -257,8 +257,8 @@ footer {
 .invisible {
   visibility: hidden;
 }
-.invalid-border {
-  border: 1px solid var(--primary-red);
+.input-field.error::placeholder {
+  color: var(--primary-red);
 }
 
 /* ==== Responesive ==== */
